@@ -24,6 +24,7 @@
 .menuArea {
     display: flex;
     justify-content: center;
+    margin-bottom: 2em;
 }
 
 .navSearch {
@@ -36,4 +37,40 @@
 
 .navInput {
     border: none;
+}
+
+.productCard:hover {
+    transform: scale(1.1);
+} 
+
+.navBarImg:hover {
+    cursor: pointer;
+}
+
+.navBarLogin:hover {
+    cursor: pointer;
+} 
+
+.productImg {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.detailTitle {
+    font-size: 25px;
+}
+
+.detailPrice {
+    font-size: 25px;
+}
+
+#dropdown-basic-button {
+    margin: 1em 0 1em 0;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+}
+
+.detailBtn {
+    width: 100%;
 }

@@ -2,15 +2,18 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ProductCard from "../component/ProductCard";
 import { Col, Container, Row } from "react-bootstrap";
+import { useSearchParams } from "react-router-dom";
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
+  const [query, setQuery] = useSearchParams();
   const getProducts = async () => {
+    let searchQuery = query.get("q") || "";
+    console.log(searchQuery);
     await axios
-      .get("http://localhost:5000/products")
+      .get(`http://localhost:5000/products?q=${searchQuery}`)
       .then((data) => {
         setProductList(data.data);
-        console.log(data);
       })
       .catch((err) => {
         console.log(err);
@@ -18,7 +21,7 @@ const ProductAll = () => {
   };
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [query]);
 
   return (
     <div>
